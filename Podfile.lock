@@ -1,0 +1,67 @@
+PODS:
+  - CommandLine (3.0.2):
+    - CommandLine/Command (= 3.0.2)
+    - CommandLine/Interface (= 3.0.2)
+    - CommandLine/Launcher (= 3.0.2)
+  - CommandLine/ANSI (3.0.2):
+    - CommandLine/Main
+    - CommandLine/Tools
+  - CommandLine/Command (3.0.2):
+    - CommandLine/ANSI
+    - CommandLine/Error
+    - CommandLine/Helper
+    - CommandLine/I18N
+    - CommandLine/Info
+    - CommandLine/Main
+  - CommandLine/Error (3.0.2):
+    - CommandLine/I18N
+    - CommandLine/Main
+  - CommandLine/Helper (3.0.2):
+    - CommandLine/ANSI
+    - CommandLine/I18N
+    - CommandLine/Info
+    - CommandLine/Main
+  - CommandLine/I18N (3.0.2):
+    - CommandLine/Main
+  - CommandLine/Info (3.0.2):
+    - CommandLine/I18N
+    - CommandLine/Main
+  - CommandLine/Interface (3.0.2):
+    - CommandLine/ANSI
+    - CommandLine/Main
+  - CommandLine/Launcher (3.0.2):
+    - CommandLine/Main
+  - CommandLine/Main (3.0.2)
+  - CommandLine/Tools (3.0.2):
+    - CommandLine/Main
+  - MUFoundation/MUPath (0.0.6)
+  - PodfileLock (0.1.0)
+
+DEPENDENCIES:
+  - CommandLine
+  - MUFoundation/MUPath
+  - PodfileLock (from `https://gitee.com/pica/PodfileLock.git`, branch `main`)
+
+SPEC REPOS:
+  trunk:
+    - CommandLine
+    - MUFoundation
+
+EXTERNAL SOURCES:
+  PodfileLock:
+    :branch: main
+    :git: https://gitee.com/pica/PodfileLock.git
+
+CHECKOUT OPTIONS:
+  PodfileLock:
+    :commit: f01451e29d5fbd95fe36afde82e55defd0bc1e47
+    :git: https://gitee.com/pica/PodfileLock.git
+
+SPEC CHECKSUMS:
+  CommandLine: 2126d9d1cbc3185bd9f7e7caddcc0d939b9cfe0f
+  MUFoundation: 7ba494a348139d1a355a3f20b5ba3de11720c9d4
+  PodfileLock: 60ef23c2f83b5244d5e74f5efcfd6b96916a14bf
+
+PODFILE CHECKSUM: 4cfa414002b4f84c88f2255d799cd7e2f2a19490
+
+COCOAPODS: 1.11.3
