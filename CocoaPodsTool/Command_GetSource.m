@@ -18,6 +18,8 @@ command_configuration(command) {
 
 command_option(BOOL, url, note=@"Get pod url.");
 command_option(BOOL, repo, note=@"Get pod repo name.");
+command_option(BOOL, pull, note=@"Pull repo to newest.");
+command_option(BOOL, openInFinder, note=@"Open the repo in Finder.");
 
 command_argument(CLString, pod)
 
@@ -48,6 +50,7 @@ command_main() {
         CLInfo(target.source.location);
     }
     else if (target.source.type == PLTargetSourceTypeRepo) {
+        
         if ([self url]) {
             CLInfo(target.source.location);
         }
@@ -55,6 +58,13 @@ command_main() {
             MUPath *repoPath = [self findRepoPathByGitURL:target.source.location];
             if (repoPath) {
                 CLInfo(@"%@", repoPath.lastPathComponent);
+                if ([self pull]) {
+                    CLLaunch(repoPath.string, @"/usr/bin/git", @"pull", nil);
+                }
+                if ([self openInFinder]) {
+                    MUPath *specRoot = [repoPath subpathWithComponent:target.name];
+                    CLLaunch(specRoot.string, @"/usr/bin/open", @"-R", @".", nil);
+                }
             } else {
                 CLError(@"No matched repo.");
                 return EXIT_FAILURE;
